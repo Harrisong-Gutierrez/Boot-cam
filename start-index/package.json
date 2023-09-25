@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "watch-scss": "node-sass --source-map ./styles/css --watch ./styles/scss -o ./styles/css",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
