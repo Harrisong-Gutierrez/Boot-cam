@@ -126,9 +126,28 @@ const car = {
 };
 // Write a program that changes the value of the "year" property in the car object to update it to a new year.
 car.model = "Chevrolete";
+// Create an object representing a book with properties: title, author, and number of pages.
+const book = {
+  title: "JavaScript for Beginners",
+  author: "Jane Smith",
+  pages: 350,
+};
+if (book.pages > 500) {
+  console.log("This book has more than 500 pages.");
+} else {
+  console.log("This book has more than 500 pages.");
+}
+// Create an object representing a student with properties: name, age, and an array of subjects they are studying.
+const student = {
+  name: "Platon",
+  age: 20,
+  subjects: ["Mathematics", "Science", "English"],
+};
 //
 console.log("This is person", person);
+console.log("This is student", student);
 console.log("This is car", car);
+console.log("This is Boock", book);
 //
 
 console.log("Computer antes", computer.isOn);
