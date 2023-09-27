@@ -79,6 +79,34 @@ const airCon = {
     }
   },
 };
+
+const computer = {
+  screen: "Full HD",
+  isOn: false,
+  keyboard: "wireless and latest generation",
+  RAM: "8TB",
+  operativeSistem: "UBUNTU",
+  switch: function () {
+    if (this.isOn) {
+      this.isOn = false;
+    } else {
+      this.isOn = true;
+    }
+  },
+  changeComputerSystem: function (newCompuerSystem) {
+    if (newCompuerSystem !== this.newCompuerSystem) {
+      this.operativeSistem = newCompuerSystem;
+    }
+  },
+};
+console.log("Computer antes", computer.isOn);
+computer.switch();
+console.log("Computer despues", computer.isOn);
+console.log("This is my Computer", computer);
+console.log("Computer System antes", computer.operativeSistem);
+computer.changeComputerSystem("WINDOWS");
+console.log("Computer System despues", computer.operativeSistem);
+
 console.log("antes", airCon.isOn);
 airCon.switch();
 console.log("despues", airCon.isOn);
