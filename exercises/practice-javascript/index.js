@@ -109,6 +109,28 @@ const computer = {
     }
   },
 };
+
+// Create an object representing a person with properties: name, age, and occupation.
+const person = {
+  name: "Harrisong",
+  age: 25,
+  occupation: "Frontend Developer",
+};
+// Write a program that accesses and prints the value of a specific property from the person object created in the previous question.
+console.log("This is the ocupation", person.occupation);
+// Create an object representing a car with properties: make, model, and year.
+const car = {
+  make: "Toyota",
+  model: "Corolla",
+  year: 2022,
+};
+// Write a program that changes the value of the "year" property in the car object to update it to a new year.
+car.model = "Chevrolete";
+//
+console.log("This is person", person);
+console.log("This is car", car);
+//
+
 console.log("Computer antes", computer.isOn);
 computer.switch();
 console.log("Computer despues", computer.isOn);
@@ -134,10 +156,3 @@ console.log("temp despues: ", airCon.temp);
 console.log("fan Speed antes: ", airCon.fanSpeed);
 airCon.changeFanSpeed(500);
 console.log("fan Speed despues: ", airCon.fanSpeed);
-
-const myArr = [10, 9, 8, 7, 6, 7, 8, 9];
-const total = 0;
-for (var i = 0; i < myArr.length; i++) {
-  total += myArr[i];
-  console.log("This is my Total", total);
-}
