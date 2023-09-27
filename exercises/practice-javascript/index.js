@@ -48,6 +48,8 @@ const airCon = {
   fanSpeed: 1,
   maxFanSpeed: 5,
   minFanSpeed: 1,
+  maxFanSpeed: 300,
+  minFanSpeed: 0,
   height: 30,
   width: 70,
   amperes: 1,
@@ -74,6 +76,14 @@ const airCon = {
     }
   },
   changeFanSpeed: function (newSpeed) {
+    if (newSpeed <= this.minFanSpeed) {
+      alert("as slow as possible");
+      return;
+    }
+    if (newSpeed >= this.maxFanSpeed) {
+      alert("as fast as possible");
+      return;
+    }
     if (newSpeed !== this.fanSpeed) {
       this.fanSpeed = newSpeed;
     }
@@ -121,6 +131,13 @@ console.log("temp antes: ", airCon.temp);
 // airCon.changeTemp(300);
 console.log("temp despues: ", airCon.temp);
 // Break fan change
-console.log("fan antes: ", airCon.fanSpeed);
-airCon.changeFanSpeed(-1);
-console.log("fan despues: ", airCon.fanSpeed);
+console.log("fan Speed antes: ", airCon.fanSpeed);
+airCon.changeFanSpeed(500);
+console.log("fan Speed despues: ", airCon.fanSpeed);
+
+const myArr = [10, 9, 8, 7, 6, 7, 8, 9];
+const total = 0;
+for (var i = 0; i < myArr.length; i++) {
+  total += myArr[i];
+  console.log("This is my Total", total);
+}
