@@ -223,19 +223,93 @@ const tech = [
 ];
 //
 for (let i = 0; i < tech.length; i++) {
-  console.log(tech[i]);
+  console.log("This isArray tech normal", tech[i]);
 }
 
 for (let i = tech.length - 1; i >= 0; i--) {
-  console.log(tech[i]);
+  console.log("This isArray tech in reverse", tech[i]);
 }
 
 tech.forEach((item) => {
   let timeOfExperience = item.experience;
   if (timeOfExperience > 5) {
-    console.log(item);
+    console.log("properties greater than 5", item);
   }
 });
+///////////////////////////// freecodeCamp
+function copyMachine(arr, num) {
+  let newArr = [];
+  while (num >= 1) {
+    // Cambia solo el código debajo de esta línea
+    newArr.push([...arr]);
+    // Cambia solo el código encima de esta línea
+    num--;
+  }
+  return newArr;
+}
+
+console.log(copyMachine([true, false, true], 2));
+//
+function spreadOut() {
+  let fragment = ["to", "code"];
+  let sentence = ["learning", ...fragment, "is", "fun"]; // Cambia esta línea
+  return sentence;
+}
+
+console.log(spreadOut());
+///////
+function quickCheck(arr, elem) {
+  // Cambia solo el código debajo de esta línea
+  if (arr.indexOf(elem) >= 0) {
+    return true;
+  }
+  return false;
+  // Cambia solo el código encima de esta línea
+}
+
+console.log(quickCheck(["squash", "onions", "shallots"], "mushrooms"));
+//////
+function filteredArray(arr, elem) {
+  let newArr = [];
+  // Cambia solo el código debajo de esta línea
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].indexOf(elem) == -1) {
+      newArr.push(arr[i]);
+    }
+  }
+  // Cambia solo el código encima de esta línea
+  return newArr;
+}
+
+console.log(
+  "This is the response to  filteredArray",
+  filteredArray(
+    [
+      [3, 2, 3],
+      [1, 6, 3],
+      [3, 13, 26],
+      [19, 3, 9],
+    ],
+    3
+  )
+);
+///////
+let myNestedArray = [
+  // Cambia solo el código debajo de esta línea
+  ["unshift", false, 1, 2, 3, "complex", "nested"],
+
+  ["loop", "shift", 6, 7, 1000, "method"],
+
+  ["concat", false, true, "spread", "array", ["deep"]],
+
+  ["mutate", 1327.98, "splice", "slice", "push", [["deeper"]]],
+
+  ["iterate", 1.3849, 7, "8.4876", "arbitrary", "depth", [[["deepest"]]]],
+
+  // Cambia solo el código encima de esta línea
+];
+console.log("This is my  Nested Array", myNestedArray);
+/////////
 
 const numberList = [1, 7, 1998];
 
