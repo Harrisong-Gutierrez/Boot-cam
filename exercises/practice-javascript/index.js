@@ -252,10 +252,8 @@ console.log(copyMachine([true, false, true], 2));
 //
 function spreadOut() {
   let fragment = ["to", "code"];
-  let sentence = ["learning", ...fragment, "is", "fun"]; // Cambia esta línea
-  return sentence;
+  return ["learning", ...fragment, "is", "fun"]; // Cambia esta línea
 }
-
 console.log(spreadOut());
 ///////
 function quickCheck(arr, elem) {
@@ -308,6 +306,11 @@ let myNestedArray = [
 
   // Cambia solo el código encima de esta línea
 ];
+
+// myNestedArray[0]
+myNestedArray[0][6];
+myNestedArray[3][6][0][0];
+
 console.log("This is my  Nested Array", myNestedArray);
 /////////
 let foods = {
