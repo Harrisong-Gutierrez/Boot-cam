@@ -116,6 +116,15 @@ const person = {
   age: 25,
   occupation: "Frontend Developer",
 };
+
+function invertSring(text) {
+  let newText = "";
+  for (let i = text.length - 1; i >= 0; i--) {
+    newText += text[i];
+  }
+  return newText;
+}
+console.log(invertSring("Hola Mundo"));
 // Write a program that accesses and prints the value of a specific property from the person object created in the previous question.
 console.log("This is the ocupation", person.occupation);
 // Create an object representing a car with properties: make, model, and year.
@@ -144,12 +153,103 @@ const student = {
   subjects: ["Mathematics", "Science", "English"],
 };
 //
+const tech = [
+  {
+    name: "React",
+    desc: "UI library",
+    experience: 7,
+    usage: "Frontend",
+  },
+
+  {
+    name: "Vue",
+    desc: "UI library",
+    experience: 3,
+    usage: "Frontend",
+  },
+
+  {
+    name: "jQuery",
+    desc: "UI library",
+    experience: 8,
+    usage: "Frontend",
+  },
+  {
+    name: "Angular",
+    desc: "UI library",
+    experience: 2,
+    usage: "Frontend",
+  },
+  {
+    name: "C++",
+    desc: "Programming Language",
+    experience: 2,
+    usage: "Backend",
+  },
+  {
+    name: "Node",
+    desc: "JS based server",
+    experience: 3,
+    usage: "Backend",
+  },
+
+  {
+    name: "JavaScript",
+    desc: "Programming language",
+    experience: 8,
+    usage: "Fullstack",
+  },
+
+  {
+    name: "Ruby",
+    desc: "Programming language",
+    experience: 1,
+    usage: "Backend",
+  },
+
+  {
+    name: "Python",
+    desc: "Programming language",
+    experience: 1,
+    usage: "Backend",
+  },
+
+  {
+    name: "Java",
+    desc: "Programming language",
+    experience: 3,
+    usage: "Backend",
+  },
+];
+//
+for (let i = 0; i < tech.length; i++) {
+  console.log(tech[i]);
+}
+
+for (let i = tech.length - 1; i >= 0; i--) {
+  console.log(tech[i]);
+}
+
+tech.forEach((item) => {
+  let timeOfExperience = item.experience;
+  if (timeOfExperience > 5) {
+    console.log(item);
+  }
+});
+
+const numberList = [1, 7, 1998];
+
+const stage1 = numberList[0];
+const stage2 = numberList[1];
+const stage3 = numberList[2];
+console.log(stage1, stage2, stage3);
+
+//
 console.log("This is person", person);
 console.log("This is student", student);
 console.log("This is car", car);
 console.log("This is Boock", book);
 //
-
 console.log("Computer antes", computer.isOn);
 computer.switch();
 console.log("Computer despues", computer.isOn);
@@ -157,7 +257,6 @@ console.log("This is my Computer", computer);
 console.log("Computer System antes", computer.operativeSistem);
 computer.changeComputerSystem("WINDOWS");
 console.log("Computer System despues", computer.operativeSistem);
-
 console.log("antes", airCon.isOn);
 airCon.switch();
 console.log("despues", airCon.isOn);
