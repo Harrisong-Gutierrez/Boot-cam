@@ -310,6 +310,20 @@ let myNestedArray = [
 ];
 console.log("This is my  Nested Array", myNestedArray);
 /////////
+let foods = {
+  apples: 25,
+  oranges: 32,
+  plums: 28,
+};
+const food = "bananas";
+foods[food] = 13;
+const grap = "grapes";
+foods[grap] = 35;
+const strawberrie = "strawberries";
+foods[strawberrie] = 27;
+
+console.log(foods);
+////////////
 
 const numberList = [1, 7, 1998];
 
