@@ -309,7 +309,6 @@ let myNestedArray = [
 
 // myNestedArray[0]
 myNestedArray[0][6];
-myNestedArray[3][6][0][0];
 
 console.log("This is my  Nested Array", myNestedArray);
 /////////
@@ -326,7 +325,141 @@ const strawberrie = "strawberries";
 foods[strawberrie] = 27;
 
 console.log(foods);
-////////////
+////////////---///
+
+let userActivity = {
+  id: 23894201352,
+  date: "January 1, 2017",
+  data: {
+    totalUsers: 51,
+    online: 42,
+  },
+};
+
+// Cambia solo el código debajo de esta línea
+userActivity.data.online = 45;
+console.log(userActivity);
+// Cambia solo el código encima de esta línea
+console.log("This is my userActivity", userActivity);
+/////
+let comida = {
+  apples: 25,
+  oranges: 32,
+  plums: 28,
+  bananas: 13,
+  grapes: 35,
+  strawberries: 27,
+};
+
+function checkInventory(scannedItem) {
+  // Cambia solo el código debajo de esta línea
+  return comida[scannedItem];
+  // Cambia solo el código encima de esta línea
+}
+///////
+let foods_ = {
+  apples: 25,
+  oranges: 32,
+  plums: 28,
+  bananas: 13,
+  grapes: 35,
+  strawberries: 27,
+};
+
+// Cambia solo el código debajo de esta línea
+delete foods_.oranges;
+delete foods_.plums;
+delete foods_.strawberries;
+// Cambia solo el código encima de esta línea
+
+console.log("This are my foods", foods_);
+///////
+let users = {
+  Alan: {
+    age: 27,
+    online: true,
+  },
+  Jeff: {
+    age: 32,
+    online: true,
+  },
+  Sarah: {
+    age: 48,
+    online: true,
+  },
+  Ryan: {
+    age: 19,
+    online: true,
+  },
+};
+
+function isEveryoneHere(userObj) {
+  // Cambia solo el código debajo de esta línea
+  return (
+    userObj.hasOwnProperty("Alan") &&
+    userObj.hasOwnProperty("Jeff") &&
+    userObj.hasOwnProperty("Sarah") &&
+    userObj.hasOwnProperty("Ryan")
+  );
+  // Cambia solo el código encima de esta línea
+}
+
+console.log("EveryOne is Here", isEveryoneHere(users));
+
+console.log("This is my checkInventory funtion ", checkInventory("oranges"));
+///////////////
+const users_ = {
+  Alan: {
+    online: false,
+  },
+  Jeff: {
+    online: true,
+  },
+  Sarah: {
+    online: false,
+  },
+};
+
+function countOnline(allUsers) {
+  // Cambia solo el código debajo de esta línea
+  let result = 0;
+  for (let user in users_) {
+    if (allUsers[user].online === true) {
+      result++;
+    }
+  }
+  return result;
+  // Cambia solo el código encima de esta línea
+}
+
+console.log("Users overhere", countOnline(users_));
+/////////////
+let users__ = {
+  Alan: {
+    age: 27,
+    online: false,
+  },
+  Jeff: {
+    age: 32,
+    online: true,
+  },
+  Sarah: {
+    age: 48,
+    online: false,
+  },
+  Ryan: {
+    age: 19,
+    online: true,
+  },
+};
+
+function getArrayOfUsers(obj) {
+  // Cambia solo el código debajo de esta línea
+  return Object.keys(obj);
+  // Cambia solo el código encima de esta línea
+}
+
+console.log(getArrayOfUsers(users__));
 
 const numberList = [1, 7, 1998];
 
