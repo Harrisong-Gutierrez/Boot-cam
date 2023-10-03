@@ -467,7 +467,189 @@ const stage1 = numberList[0];
 const stage2 = numberList[1];
 const stage3 = numberList[2];
 console.log(stage1, stage2, stage3);
+/////
 
+const workers = [{
+  id: 456,
+  firstName: "Jorge",
+  lastName: "Lopez",
+  weeklyHours: 44,
+  hourlyRate: 15,
+  age: 28,
+  loyalty: 7
+},
+{
+  id: 789,
+  firstName: "Harrisong",
+  lastName: "Lopez",
+  weeklyHours: 40,
+  hourlyRate: 8,
+  age: 35,
+  loyalty: 1
+},
+
+{
+  id: 101,
+  firstName: "Trapito",
+  lastName: "Lopez",
+  weeklyHours: 48,
+  hourlyRate: 17,
+  age: 24,
+  loyalty: 2
+},
+{
+  id: 102,
+  firstName: "Kenley",
+  lastName: "Lopez",
+  weeklyHours: 48,
+  hourlyRate: 15,
+  age: 19,
+  loyalty: 7
+},
+{
+  id: 103,
+  firstName: "Bluey",
+  lastName: "Lopez",
+  weeklyHours: 60,
+  hourlyRate: 22,
+  age: 6,
+  loyalty: 10
+},
+];
+
+let sum = 0;
+for (let i = 0; i < workers.length; i++) {
+if (workers[i].hourlyRate) {
+  sum = workers[i].hourlyRate + sum
+}
+};
+console.log("exercise 1", sum / workers.length)
+
+
+for (let i = 0; i < workers.length; i++) {
+  let semanal = 0, monthly = 0;
+
+let {
+  hourlyRate,
+  weeklyHours,
+  firstName
+} = workers[i];
+
+if (hourlyRate && weeklyHours) {
+      semanal = hourlyRate * weeklyHours;
+  monthly = semanal * 4;
+  
+  console.log(firstName)
+  console.log("exercise 2", semanal)
+  console.log("exercise 2", monthly)
+}
+}
+console.log("exercise 3")
+for(let i = 0; i < workers.length; i++){
+  if(workers[i].loyalty < 5){
+console.log(workers[i].firstName)
+}
+}
+///////////////////////
+let sum = 0;
+workers.forEach((worker) => {
+  if (worker.hourlyRate) {
+    sum += worker.hourlyRate;
+  }
+});
+console.log("exercise 1", sum / workers.length);
+
+workers.forEach((worker) => {
+  let semanal = 0,
+    monthly = 0;
+
+  const { hourlyRate, weeklyHours, firstName } = worker;
+
+  if (hourlyRate && weeklyHours) {
+    semanal = hourlyRate * weeklyHours;
+    monthly = semanal * 4;
+
+    console.log(firstName);
+    console.log("exercise 2", semanal);
+    console.log("exercise 2", monthly);
+  }
+});
+
+console.log("exercise 3");
+workers.forEach((worker) => {
+  if (worker.loyalty < 5) {
+    console.log(worker.firstName);
+  }
+});
+/////////////////////
+let sum = 0;
+for (const worker of workers) {
+  if (worker.hourlyRate) {
+    sum += worker.hourlyRate;
+  }
+}
+console.log("exercise 1", sum / workers.length);
+
+for (const worker of workers) {
+  let semanal = 0,
+    monthly = 0;
+
+  const { hourlyRate, weeklyHours, firstName } = worker;
+
+  if (hourlyRate && weeklyHours) {
+    semanal = hourlyRate * weeklyHours;
+    monthly = semanal * 4;
+
+    console.log(firstName);
+    console.log("exercise 2", semanal);
+    console.log("exercise 2", monthly);
+  }
+}
+
+console.log("exercise 3");
+for (const worker of workers) {
+  if (worker.loyalty < 5) {
+    console.log(worker.firstName);
+  }
+}
+
+/////////////////////
+let sum = 0;
+let i = 0;
+while (i < workers.length) {
+  if (workers[i].hourlyRate) {
+    sum += workers[i].hourlyRate;
+  }
+  i++;
+}
+console.log("exercise 1", sum / workers.length);
+
+i = 0;
+while (i < workers.length) {
+  let semanal = 0,
+    monthly = 0;
+
+  const { hourlyRate, weeklyHours, firstName } = workers[i];
+
+  if (hourlyRate && weeklyHours) {
+    semanal = hourlyRate * weeklyHours;
+    monthly = semanal * 4;
+
+    console.log(firstName);
+    console.log("exercise 2", semanal);
+    console.log("exercise 2", monthly);
+  }
+  i++;
+}
+
+console.log("exercise 3");
+i = 0;
+while (i < workers.length) {
+  if (workers[i].loyalty < 5) {
+    console.log(workers[i].firstName);
+  }
+  i++;
+}
 //
 console.log("This is person", person);
 console.log("This is student", student);
