@@ -469,97 +469,121 @@ const stage3 = numberList[2];
 console.log(stage1, stage2, stage3);
 /////
 
-const workers = [{
-  id: 456,
-  firstName: "Jorge",
-  lastName: "Lopez",
-  weeklyHours: 44,
-  hourlyRate: 15,
-  age: 28,
-  loyalty: 7
-},
-{
-  id: 789,
-  firstName: "Harrisong",
-  lastName: "Lopez",
-  weeklyHours: 40,
-  hourlyRate: 8,
-  age: 35,
-  loyalty: 1
-},
+const workers = [
+  {
+    id: 456,
+    firstName: "Jorge",
+    lastName: "Lopez",
+    weeklyHours: 44,
+    hourlyRate: 15,
+    age: 28,
+    loyalty: 7,
+  },
+  {
+    id: 789,
+    firstName: "Harrisong",
+    lastName: "Lopez",
+    weeklyHours: 40,
+    hourlyRate: 8,
+    age: 35,
+    loyalty: 1,
+  },
 
-{
-  id: 101,
-  firstName: "Trapito",
-  lastName: "Lopez",
-  weeklyHours: 48,
-  hourlyRate: 17,
-  age: 24,
-  loyalty: 2
-},
-{
-  id: 102,
-  firstName: "Kenley",
-  lastName: "Lopez",
-  weeklyHours: 48,
-  hourlyRate: 15,
-  age: 19,
-  loyalty: 7
-},
-{
-  id: 103,
-  firstName: "Bluey",
-  lastName: "Lopez",
-  weeklyHours: 60,
-  hourlyRate: 22,
-  age: 6,
-  loyalty: 10
-},
+  {
+    id: 101,
+    firstName: "Trapito",
+    lastName: "Lopez",
+    weeklyHours: 48,
+    hourlyRate: 17,
+    age: 24,
+    loyalty: 2,
+  },
+  {
+    id: 102,
+    firstName: "Kenley",
+    lastName: "Lopez",
+    weeklyHours: 48,
+    hourlyRate: 15,
+    age: 19,
+    loyalty: 7,
+  },
+  {
+    id: 103,
+    firstName: "Bluey",
+    lastName: "Lopez",
+    weeklyHours: 60,
+    hourlyRate: 22,
+    age: 6,
+    loyalty: 10,
+  },
 ];
 
 let sum = 0;
 for (let i = 0; i < workers.length; i++) {
-if (workers[i].hourlyRate) {
-  sum = workers[i].hourlyRate + sum
+  if (workers[i].hourlyRate) {
+    sum = workers[i].hourlyRate + sum;
+  }
 }
-};
-console.log("exercise 1", sum / workers.length)
-
+console.log("exercise 1", sum / workers.length);
 
 for (let i = 0; i < workers.length; i++) {
-  let semanal = 0, monthly = 0;
+  let semanal = 0,
+    monthly = 0;
 
-let {
-  hourlyRate,
-  weeklyHours,
-  firstName
-} = workers[i];
+  let { hourlyRate, weeklyHours, firstName } = workers[i];
 
-if (hourlyRate && weeklyHours) {
-      semanal = hourlyRate * weeklyHours;
-  monthly = semanal * 4;
-  
-  console.log(firstName)
-  console.log("exercise 2", semanal)
-  console.log("exercise 2", monthly)
+  if (hourlyRate && weeklyHours) {
+    semanal = hourlyRate * weeklyHours;
+    monthly = semanal * 4;
+
+    console.log(firstName);
+    console.log("exercise 2", semanal);
+    console.log("exercise 2", monthly);
+  }
 }
-}
-console.log("exercise 3")
-for(let i = 0; i < workers.length; i++){
-  if(workers[i].loyalty < 5){
-console.log(workers[i].firstName)
-}
+console.log("exercise 3");
+for (let i = 0; i < workers.length; i++) {
+  if (workers[i].loyalty < 5) {
+    console.log(workers[i].firstName);
+  }
 }
 ///////////////////////
-let sum = 0;
+let summation = 0;
 workers.forEach((worker) => {
   if (worker.hourlyRate) {
-    sum += worker.hourlyRate;
+    summation += worker.hourlyRate;
   }
 });
-console.log("exercise 1", sum / workers.length);
+console.log("average of workers using forEach", summation / workers.length);
 
 workers.forEach((worker) => {
+  let weekly = 0,
+    monthly = 0;
+  let { hourlyRate, weeklyHours, firstName } = worker;
+  if (hourlyRate && weeklyHours) {
+    weekly = hourlyRate * weeklyHours;
+    console.log(firstName);
+    console.log("weekly schedule", weekly);
+    console.log("monthly schedule", monthly);
+  }
+});
+
+console.log("employee longevity less than five years");
+workers.forEach((worker) => {
+  if (worker.loyalty < 5) {
+    console.log(worker.firstName);
+  }
+});
+/////////////////////
+let suma = 0;
+for (const worker of workers) {
+  if (worker.hourlyRate) {
+    suma += worker.hourlyRate;
+  }
+}
+console.log("average of workers using for of", suma / workers.length);
+
+for (const worker of workers) {
   let semanal = 0,
     monthly = 0;
 
@@ -570,59 +594,28 @@ workers.forEach((worker) => {
     monthly = semanal * 4;
 
     console.log(firstName);
-    console.log("exercise 2", semanal);
-    console.log("exercise 2", monthly);
-  }
-});
-
-console.log("exercise 3");
-workers.forEach((worker) => {
-  if (worker.loyalty < 5) {
-    console.log(worker.firstName);
-  }
-});
-/////////////////////
-let sum = 0;
-for (const worker of workers) {
-  if (worker.hourlyRate) {
-    sum += worker.hourlyRate;
-  }
-}
-console.log("exercise 1", sum / workers.length);
-
-for (const worker of workers) {
-  let semanal = 0,
-    monthly = 0;
-
-  const { hourlyRate, weeklyHours, firstName } = worker;
-
-  if (hourlyRate && weeklyHours) {
-    semanal = hourlyRate * weeklyHours;
-    monthly = semanal * 4;
-
-    console.log(firstName);
-    console.log("exercise 2", semanal);
-    console.log("exercise 2", monthly);
+    console.log("weekly schedule", semanal);
+    console.log("monthly schedule", monthly);
   }
 }
 
-console.log("exercise 3");
+console.log("employee longevity less than five years");
 for (const worker of workers) {
   if (worker.loyalty < 5) {
     console.log(worker.firstName);
-  }
+  }
 }
 
 /////////////////////
-let sum = 0;
+let addition = 0;
 let i = 0;
 while (i < workers.length) {
   if (workers[i].hourlyRate) {
-    sum += workers[i].hourlyRate;
+    addition += workers[i].hourlyRate;
   }
   i++;
 }
-console.log("exercise 1", sum / workers.length);
+console.log("average of workers using forEach", addition / workers.length);
 
 i = 0;
 while (i < workers.length) {
@@ -636,19 +629,19 @@ while (i < workers.length) {
     monthly = semanal * 4;
 
     console.log(firstName);
-    console.log("exercise 2", semanal);
-    console.log("exercise 2", monthly);
+    console.log("weekly schedule", semanal);
+    console.log("monthly schedule", monthly);
   }
   i++;
 }
 
-console.log("exercise 3");
+console.log("employee longevity less than five years");
 i = 0;
 while (i < workers.length) {
   if (workers[i].loyalty < 5) {
     console.log(workers[i].firstName);
-  }
-  i++;
+  }
+  i++;
 }
 //
 console.log("This is person", person);
@@ -661,7 +654,7 @@ computer.switch();
 console.log("Computer despues", computer.isOn);
 console.log("This is my Computer", computer);
 console.log("Computer System antes", computer.operativeSistem);
-computer.changeComputerSystem("WINDOWS");
+computer.changeComputerSystem("WINDadditionOWS");
 console.log("Computer System despues", computer.operativeSistem);
 console.log("antes", airCon.isOn);
 airCon.switch();
