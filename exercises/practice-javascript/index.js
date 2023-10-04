@@ -872,7 +872,16 @@ console.log(
   "This is the total salary of the people in the development department",
   som
 );
+////////////////
+let n = 13;
+let gap = [0, 1];
 
+for (let i = 2; i < n; i++) {
+  gap[i] = gap[i - 1] + gap[i - 2];
+}
+////////////////
+
+console.log("This is my Sucesión de gaponacci", gap);
 ///////////////  WOMEWORK HARRISONG
 
 console.log("This is person", person);
