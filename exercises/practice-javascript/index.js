@@ -801,6 +801,78 @@ for (let i = 0; i < people.length; i++) {
 }
 /////////
 
+const oldest = {
+    firstName: "",
+    age: 0,
+  },
+  youngest = {
+    firstName: "",
+    age: 0,
+  };
+for (let i = 0; i < people.length; i++) {
+  const {
+    firstName,
+    DOB: { year },
+  } = people[i];
+  const currentAge = 2023 - year;
+  if (i === 0) {
+    youngest.firstName = firstName;
+    oldest.firstName = firstName;
+    youngest.age = currentAge;
+    oldest.age = currentAge;
+  } else {
+    if (currentAge < youngest.age) {
+      youngest.age = currentAge;
+      youngest.firstName = firstName;
+    }
+    if (currentAge > oldest.age) {
+      oldest.age = currentAge;
+      oldest.firstName = firstName;
+    }
+  }
+}
+console.log(youngest);
+console.log(oldest);
+const departmentCounter = {
+  Marketing: 0,
+  Development: 0,
+  Sales: 0,
+  "Office Management": 0,
+};
+people.forEach((person) => {
+  if (person.department === "Marketing") {
+    departmentCounter.Marketing = departmentCounter.Marketing + 1;
+  }
+  if (person.department === "Development") {
+    departmentCounter.Development = departmentCounter.Development + 1;
+  }
+  if (person.department === "Sales") {
+    departmentCounter.Sales = departmentCounter.Sales + 1;
+  }
+  if (person.department === "Office Management") {
+    departmentCounter["Office Management"] =
+      departmentCounter["Office Management"] + 1;
+  }
+});
+people.forEach((person) => {
+  const { department } = person;
+  departmentCounter[department] = departmentCounter[department] + 1;
+});
+console.log("This is my departamentCounter", departmentCounter);
+/////////////////
+// 6) What is the combined salary of all he people in the "Development" department?
+// Expected: 232,000
+som = 0;
+people.forEach((person) => {
+  if (person.department === "Development") {
+    som = som + parseInt(person.salary);
+  }
+});
+console.log(
+  "This is the total salary of the people in the development department",
+  som
+);
+
 ///////////////  WOMEWORK HARRISONG
 
 console.log("This is person", person);
