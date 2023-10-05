@@ -62,69 +62,6 @@ console.log(typeof HondaCivic);
 console.log(HondaCivic instanceof Car);
 HondaCivic.switchCar();
 
-///////////////////////////////////////
-class air_conditioning {
-  constructor(
-    temp,
-    maxTemp,
-    minTemp,
-    fanSpeed,
-    maxFanSpeed,
-    minFanSpeed,
-    height,
-    width,
-    amperes
-  ) {
-    this.isOn = false;
-    this.temp = temp;
-    this.maxTemp = maxTemp;
-    this.minTemp = minTemp;
-    this.hasFan = true;
-    this.fanSpeed = fanSpeed;
-    this.maxFanSpeed = maxFanSpeed;
-    this.minFanSpeed = minFanSpeed;
-    this.height = height;
-    this.width = width;
-    this.amperes = amperes;
-  }
-  switch() {
-    if (this.isOn) {
-      this.isOn = false;
-    } else {
-      this.isOn = true;
-    }
-  }
-  changeTemp(newTemp) {
-    // Retorno temprano
-    // Early return
-    if (newTemp <= this.minTemp) {
-      alert("as cold as possible");
-      return;
-    }
-    if (newTemp >= this.maxTemp) {
-      alert("as hot as possible");
-      return;
-    }
-    if (newTemp !== this.temp) {
-      this.temp = newTemp;
-    }
-  }
-  changeFanSpeed(newSpeed) {
-    if (newSpeed <= this.minFanSpeed) {
-      alert("as slow as possible");
-      return;
-    }
-    if (newSpeed >= this.maxFanSpeed) {
-      alert("as fast as possible");
-      return;
-    }
-    if (newSpeed !== this.fanSpeed) {
-      this.fanSpeed = newSpeed;
-    }
-  }
-}
-const newair = new air_conditioning(21, 28, 16, 1, 300, 0, 30, 70, 1);
-console.log("This is my newair", newair);
 //////////////////////////////////////
 
 const airCon = {
@@ -196,13 +133,6 @@ const computer = {
   },
 };
 
-// Create an object representing a person with properties: name, age, and occupation.
-const person = {
-  name: "Harrisong",
-  age: 25,
-  occupation: "Frontend Developer",
-};
-
 function invertSring(text) {
   let newText = "";
   for (let i = text.length - 1; i >= 0; i--) {
@@ -211,8 +141,6 @@ function invertSring(text) {
   return newText;
 }
 console.log(invertSring("Hola Mundo"));
-// Write a program that accesses and prints the value of a specific property from the person object created in the previous question.
-console.log("This is the ocupation", person.occupation);
 // Create an object representing a car with properties: make, model, and year.
 const car = {
   make: "Toyota",
@@ -969,6 +897,105 @@ for (let i = 2; i < n; i++) {
 
 console.log("This is my Sucesión de gaponacci", gap);
 ///////////////  WOMEWORK HARRISONG
+// contructor clases
+class air_conditioning {
+  constructor(
+    temp,
+    maxTemp,
+    minTemp,
+    fanSpeed,
+    maxFanSpeed,
+    minFanSpeed,
+    height,
+    width,
+    amperes
+  ) {
+    this.isOn = false;
+    this.temp = temp;
+    this.maxTemp = maxTemp;
+    this.minTemp = minTemp;
+    this.hasFan = true;
+    this.fanSpeed = fanSpeed;
+    this.maxFanSpeed = maxFanSpeed;
+    this.minFanSpeed = minFanSpeed;
+    this.height = height;
+    this.width = width;
+    this.amperes = amperes;
+  }
+  switch() {
+    if (this.isOn) {
+      this.isOn = false;
+    } else {
+      this.isOn = true;
+    }
+  }
+  changeTemp(newTemp) {
+    if (newTemp <= this.minTemp) {
+      alert("as cold as possible");
+      return;
+    }
+    if (newTemp >= this.maxTemp) {
+      alert("as hot as possible in my new air");
+      return;
+    }
+    if (newTemp !== this.temp) {
+      this.temp = newTemp;
+    }
+  }
+  changeFanSpeed(newSpeed) {
+    if (newSpeed <= this.minFanSpeed) {
+      alert("as slow as possible in my new air");
+      return;
+    }
+    if (newSpeed >= this.maxFanSpeed) {
+      alert("as fast as possible in my new air");
+      return;
+    }
+    if (newSpeed !== this.fanSpeed) {
+      this.fanSpeed = newSpeed;
+    }
+  }
+}
+const newair = new air_conditioning(21, 28, 16, 1, 300, 0, 30, 70, 1);
+console.log("This is my newair", newair);
+newair.switch();
+newair.changeTemp(200);
+newair.changeFanSpeed(350);
+/////////////////////
+// Create an object representing a person with properties: name, age, and occupation.
+class person {
+  constructor(name, age, occupation, email, status, gender, height) {
+    this.name = name;
+    this.age = age;
+    this.occupation = occupation;
+    this.email = email;
+    this.status = status;
+    this.gender = gender;
+    this.height = height;
+  }
+  saludar() {
+    console.log("Hola mi nombre es Harrisong");
+  }
+  changeStatus() {
+    if (this.status === "single") {
+      this.status = "married";
+    } else {
+      this.status = "single";
+    }
+  }
+}
+const nwePerson = new person(
+  "Harrisong",
+  25,
+  "Frontend Developer",
+  "Harrisong@gmail.com",
+  "single",
+  "male",
+  1.8
+);
+nwePerson.saludar();
+console.log(nwePerson);
+/////////////////
 
 console.log("This is person", person);
 console.log("This is student", student);
