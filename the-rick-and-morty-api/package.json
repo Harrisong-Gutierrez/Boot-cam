@@ -1,0 +1,43 @@
+{
+  "name": "the-rick-and-morty-api",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "watch-scss": "node-sass --source-map ./styles/css --watch ./styles/scss -o ./styles/css",
+    "build": "next build",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.8.2",
+    "@apollo/react-hooks": "^4.0.0",
+    "@next/eslint-plugin-next": "^13.4.19",
+    "bootstrap": "^5.3.1",
+    "eslint": "^8.48.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "graphql": "^16.8.0",
+    "live-server": "^1.2.2",
+    "next": "13.4.19",
+    "node-sass": "^9.0.0",
+    "prop-types": "^15.8.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.10.1",
+    "react-infinite-scroll-component": "^6.1.0",
+    "react-query": "^3.39.3",
+    "react-redux": "^8.1.2",
+    "reactstrap": "^9.2.0",
+    "redux": "^4.2.1",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^6.0.0",
+    "web-vitals": "^3.4.0"
+  },
+  "devDependencies": {
+    "eslint-config-next": "^13.4.19",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-react": "^7.33.2"
+  }
+}

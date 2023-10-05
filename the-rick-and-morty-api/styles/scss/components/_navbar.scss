@@ -1,0 +1,43 @@
+.Navbar {
+    background-color: $default-color-green;
+    height: 74px;
+    width: 100%;
+
+    &-text {
+        color: $default-color-blak;
+        font-family: $font-family-primary;
+        font-size: 21px;
+        font-weight: 800;
+    }
+
+    &-main {
+        align-items: center;
+        display: flex;
+        height: 100%;
+        justify-content: space-between;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    &-cover {
+        align-items: center;
+        background-color: $text-black;
+        background-image: url(https://www.moviementarios.com/wp-content/uploads/2019/11/rick-y-morty-t4-1170x389.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        height: 520%;
+        justify-content: center;
+        width: 100%;
+    }
+
+    &-list {
+        align-items: center;
+        display: flex;
+        gap: 18px;
+    }
+}
+
+.nav-link:hover, .nav-link:focus {
+    color: $text-white;
+}

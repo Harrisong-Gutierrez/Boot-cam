@@ -1,0 +1,67 @@
+.Tabs {
+    margin-top: 385px;
+    height: auto;
+
+    &-content {
+        margin: 30px;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+    }
+
+    &-container {
+        display: flex;
+        background-color: $text-black;
+        width: 83%;
+        border-radius: 8px;
+        height: 500px;
+        margin-bottom: 60px;
+    }
+
+    &-img {
+        margin: 20px;
+
+        &-container {
+            margin: 20px;
+        }
+    }
+
+    &-main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &-paragraph {
+        width: 50%;
+        height: auto;
+        padding: 20px;
+        font-size: 20px;
+        color: $text-white;
+        font-family: $font-family-primary;
+        font-weight: 400;
+        overflow-y: scroll;
+    }
+
+    &-box {
+        display: flex;
+    }
+}
+
+.tab-img {
+    height: 100%;
+    width: 100%;
+}
+
+.active {
+    background-color: $background-main-dark;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s ease-in-out;
+}
+
+.card {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    justify-content: center;
+}

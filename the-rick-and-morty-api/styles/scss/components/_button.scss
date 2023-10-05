@@ -1,0 +1,42 @@
+.Button {
+    &-character {
+        background-color: $blue-lite;
+        border: none;
+        border-radius: 0 10px 10px 0;
+        font-size: 24px;
+        height: 50px;
+        width: 60px;
+
+        &-btn {
+            background-color: $blue-lite;
+            border: none;
+            border-radius: 0 10px 10px 0;
+            font-size: 24px;
+            height: 50px;
+            width: 60px;
+        }
+    }
+
+    &-tabs {
+        background-color: $blue-lite;
+        width: 135px;
+        height: 41px;
+        font-size: 20px;
+        font-weight: 500;
+        color: $text-white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid $text-black;
+        cursor: pointer;
+
+        &-border {
+            border-radius: 0 0 10px 0;
+        }
+    }
+}
+
+.active {
+    background-color: $background-main-dark;
+    color: $text-white;
+}
