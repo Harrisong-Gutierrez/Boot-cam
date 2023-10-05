@@ -38,6 +38,94 @@ var z = true + "10";
 console.log(x);
 console.log(y);
 console.log(z);
+///////////////////////////////////////
+class Car {
+  constructor(wheels, doors, windows, brand, model) {
+    this.wheels = wheels;
+    this.doors = doors;
+    this.windows = windows;
+    this.brand = brand;
+    this.model = model;
+    this.on = false;
+  }
+  switchCar() {
+    if (this.on === false) {
+      this.on = true;
+    } else {
+      this.on = false;
+    }
+  }
+}
+const HondaCivic = new Car(4, 4, 4, "Honda", "civic");
+console.log("This is my HondaCivic", HondaCivic);
+console.log(typeof HondaCivic);
+console.log(HondaCivic instanceof Car);
+HondaCivic.switchCar();
+
+///////////////////////////////////////
+class air_conditioning {
+  constructor(
+    temp,
+    maxTemp,
+    minTemp,
+    fanSpeed,
+    maxFanSpeed,
+    minFanSpeed,
+    height,
+    width,
+    amperes
+  ) {
+    this.isOn = false;
+    this.temp = temp;
+    this.maxTemp = maxTemp;
+    this.minTemp = minTemp;
+    this.hasFan = true;
+    this.fanSpeed = fanSpeed;
+    this.maxFanSpeed = maxFanSpeed;
+    this.minFanSpeed = minFanSpeed;
+    this.height = height;
+    this.width = width;
+    this.amperes = amperes;
+  }
+  switch() {
+    if (this.isOn) {
+      this.isOn = false;
+    } else {
+      this.isOn = true;
+    }
+  }
+  changeTemp(newTemp) {
+    // Retorno temprano
+    // Early return
+    if (newTemp <= this.minTemp) {
+      alert("as cold as possible");
+      return;
+    }
+    if (newTemp >= this.maxTemp) {
+      alert("as hot as possible");
+      return;
+    }
+    if (newTemp !== this.temp) {
+      this.temp = newTemp;
+    }
+  }
+  changeFanSpeed(newSpeed) {
+    if (newSpeed <= this.minFanSpeed) {
+      alert("as slow as possible");
+      return;
+    }
+    if (newSpeed >= this.maxFanSpeed) {
+      alert("as fast as possible");
+      return;
+    }
+    if (newSpeed !== this.fanSpeed) {
+      this.fanSpeed = newSpeed;
+    }
+  }
+}
+const newair = new air_conditioning(21, 28, 16, 1, 300, 0, 30, 70, 1);
+console.log("This is my newair", newair);
+//////////////////////////////////////
 
 const airCon = {
   isOn: false,
@@ -46,8 +134,6 @@ const airCon = {
   minTemp: 16,
   hasFan: true,
   fanSpeed: 1,
-  maxFanSpeed: 5,
-  minFanSpeed: 1,
   maxFanSpeed: 300,
   minFanSpeed: 0,
   height: 30,
@@ -61,8 +147,6 @@ const airCon = {
     }
   },
   changeTemp: function (newTemp) {
-    // Retorno temprano
-    // Early return
     if (newTemp <= this.minTemp) {
       alert("as cold as possible");
       return;
@@ -89,6 +173,8 @@ const airCon = {
     }
   },
 };
+
+///////////////////////////////////////
 
 const computer = {
   screen: "Full HD",
