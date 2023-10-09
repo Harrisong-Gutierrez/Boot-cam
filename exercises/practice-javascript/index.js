@@ -1031,10 +1031,26 @@ const product = {
     const totalOfSells = Price * Quantity;
     return Math.round(totalOfSells);
   },
-  sell: function (unit) {},
+  sell: function (unit) {
+    if (unit <= this.quantity) {
+      this.quantity -= unit;
+      return Math.round(unit * this.price);
+    } else {
+      return 0;
+    }
+  },
+  checkAttribute: function (attributeName) {
+    if (this.hasOwnProperty(attributeName)) {
+      return `The product ${attributeName} is ${this[attributeName]}`;
+    } else {
+      return `The product does not have an attribute named ${attributeName}`;
+    }
+  },
 };
 console.log(product);
 console.log("total units sold =", product.calculateProfit());
+console.log("Sell funtion", product.sell(3));
+console.log("checkAttribute funtion", product.checkAttribute("name"));
 // 6. Agrega una función sell. La función sell se encargará de vender una cantidad variable de unidades del item, debe
 // reducir la cantidad de items existente del producto, y debe retornar cuanto dinero produjo la venta. Si no se puede
 // realizar la venta, la función deberá devolver 0.
@@ -1234,3 +1250,9 @@ console.log("temp despues: ", airCon.temp);
 console.log("fan Speed antes: ", airCon.fanSpeed);
 airCon.changeFanSpeed(500);
 console.log("fan Speed despues: ", airCon.fanSpeed);
+
+let Harrisong = new Array();
+
+Harrisong[0] = "Harrisong";
+Harrisong[1] = "Gutierrez";
+console.log("This is Harrisong", Harrisong);
