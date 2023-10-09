@@ -1050,7 +1050,7 @@ const product = {
 console.log(product);
 console.log("total units sold =", product.calculateProfit());
 console.log("Sell funtion", product.sell(3));
-console.log("checkAttribute funtion", product.checkAttribute("name"));
+console.log("checkAttribute funtion", product.checkAttribute("Apples"));
 // 6. Agrega una función sell. La función sell se encargará de vender una cantidad variable de unidades del item, debe
 // reducir la cantidad de items existente del producto, y debe retornar cuanto dinero produjo la venta. Si no se puede
 // realizar la venta, la función deberá devolver 0.
