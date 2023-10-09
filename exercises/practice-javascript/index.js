@@ -815,38 +815,38 @@ for (let i = 0; i < people.length; i++) {
 }
 /////////
 
-const oldest = {
-    firstName: "",
-    age: 0,
-  },
-  youngest = {
-    firstName: "",
-    age: 0,
-  };
-for (let i = 0; i < people.length; i++) {
-  const {
-    firstName,
-    DOB: { year },
-  } = people[i];
-  const currentAge = 2023 - year;
-  if (i === 0) {
-    youngest.firstName = firstName;
-    oldest.firstName = firstName;
-    youngest.age = currentAge;
-    oldest.age = currentAge;
-  } else {
-    if (currentAge < youngest.age) {
-      youngest.age = currentAge;
-      youngest.firstName = firstName;
-    }
-    if (currentAge > oldest.age) {
-      oldest.age = currentAge;
-      oldest.firstName = firstName;
-    }
-  }
-}
-console.log(youngest);
-console.log(oldest);
+// const oldest = {
+//     firstName: "",
+//     age: 0,
+//   },
+//   youngest = {
+//     firstName: "",
+//     age: 0,
+//   };
+// for (let i = 0; i < people.length; i++) {
+//   const {
+//     firstName,
+//     DOB: { year },
+//   } = people[i];
+//   const currentAge = 2023 - year;
+//   if (i === 0) {
+//     youngest.firstName = firstName;
+//     oldest.firstName = firstName;
+//     youngest.age = currentAge;
+//     oldest.age = currentAge;
+//   } else {
+//     if (currentAge < youngest.age) {
+//       youngest.age = currentAge;
+//       youngest.firstName = firstName;
+//     }
+//     if (currentAge > oldest.age) {
+//       oldest.age = currentAge;
+//       oldest.firstName = firstName;
+//     }
+//   }
+// }
+// console.log(youngest);
+// console.log(oldest);
 const departmentCounter = {
   Marketing: 0,
   Development: 0,
@@ -996,6 +996,214 @@ const nwePerson = new person(
 nwePerson.saludar();
 console.log(nwePerson);
 /////////////////
+
+/////////////////////////////  THIS IS THE TEST  ///////
+// 1. Cuales son los tipos de datos manejados por Javascript?
+// R= booleano, string, number, NAN, indefinido, null, infinity ,
+
+// 3. Cuales de los siguientes valores son truthy? Marca con una x al final de la linea
+// a) "false" X
+// b) 0
+// c) -1 X
+// d) Un objeto vacío {} X
+// e) Un arreglo vacío [] X
+// f) 5 X
+
+// 4. Sin ejecutar estos fragmentos de código, responde, cual será el resultado de cada uno:
+
+// Por ejemplo: console.log(1 + 1); // Respuesta: 2
+// a) console.log(1 + "1");   // Respuesta: 11
+// b) console.log(1 + true);  // Respuesta: 2
+// c) console.log(!!"hola");  // Respuesta: true
+
+// --- Ejercicios ---
+// Usando el siguiente objeto, realiza los siguientes ejercicios:
+// 5. Agrega al objeto una función calculateProfit, la cual se encargará de calcular y retornar cuanto dinero se obtendría
+// si se vendieran todas las unidades del product.
+const product = {
+  name: "Apples",
+  quantity: 10,
+  price: 10.99,
+  category: "Food",
+  calculateProfit: function () {
+    let Price = product.price;
+    let Quantity = product.quantity;
+    const totalOfSells = Price * Quantity;
+    return Math.round(totalOfSells);
+  },
+  sell: function (unit) {},
+};
+console.log(product);
+console.log("total units sold =", product.calculateProfit());
+// 6. Agrega una función sell. La función sell se encargará de vender una cantidad variable de unidades del item, debe
+// reducir la cantidad de items existente del producto, y debe retornar cuanto dinero produjo la venta. Si no se puede
+// realizar la venta, la función deberá devolver 0.
+
+// Para probar que la función está bien, llama a la función en los siguientes escenarios:
+//     6.1) tuFuncion(3) -- Deberá retornar un valor de 32.97
+//     6.2) tuFuncion(1) -- Deberá retornar un valor de 10.99
+//     6.3) tuFuncion(15) - Deberá retornar un valor de 0
+// 7. Agrega una funcion checkAttribute al producto, esta función deberá recibir como parámetro el nombre del atributo del producto
+// que se desea consultar, y deberá retornar un texto con el siguiente mensaje: "The product [NOMBRE DEL ATRIBUTO] is [VALOR DEL ATRIBUTO]";
+// Por ejemplo: checkAttribute("name") debería retornar: "The product name is Apples";
+// ---
+// Usando el siguiente arreglo, realiza los siguientes ejercicios:
+const inventory = [
+  {
+    name: "Apple",
+    quantity: 100,
+    price: 10.99,
+    category: "Food",
+  },
+  {
+    name: "Keyboard",
+    quantity: 20,
+    price: 35.5,
+    category: "Electronics",
+  },
+  {
+    name: "Raptor",
+    quantity: 150,
+    price: 3.99,
+    category: "Drinks",
+  },
+  {
+    name: "Carrot",
+    quantity: 22,
+    price: 7.99,
+    category: "Food",
+  },
+  {
+    name: "Speakers",
+    quantity: 5,
+    price: 55.35,
+    category: "Electronics",
+  },
+  {
+    name: "Water",
+    quantity: 189,
+    price: 2.99,
+    category: "Drinks",
+  },
+  {
+    name: "Tomato",
+    quantity: 82,
+    price: 7.29,
+    category: "Food",
+  },
+  {
+    name: "USB Hub",
+    quantity: 42,
+    price: 17.99,
+    category: "Electronics",
+  },
+  {
+    name: "Coca Cola",
+    quantity: 200,
+    price: 4.99,
+    category: "Drinks",
+  },
+  {
+    name: "Potato",
+    quantity: 102,
+    price: 8.5,
+    category: "Food",
+  },
+  {
+    name: "Car Alarm",
+    quantity: 4,
+    price: 79.99,
+    category: "Electronics",
+  },
+  {
+    name: "Red Bull",
+    quantity: 200,
+    price: 9.5,
+    category: "Drinks",
+  },
+];
+// 8. Imprime el nombre y precio de todos los productos de la categoría Drinks.
+
+inventory.forEach((product) => {
+  if (product.category === "Drinks") {
+    console.log("product Name=", product.name, "product Price=", product.price);
+  }
+});
+
+// 9. Encuentra e imprime toda la información del producto con el mayor precio
+const more_expensive = {
+  name: "",
+  quantity: 0,
+  price: 0,
+  category: "",
+};
+
+for (let i = 0; i < inventory.length; i++) {
+  const { name, price, category, quantity } = inventory[i];
+
+  const currentprice = price;
+  if (i === 0) {
+    more_expensive.name = name;
+    more_expensive.quantity = quantity;
+    more_expensive.price = currentprice;
+    more_expensive.category = category;
+  } else {
+    if (currentprice > more_expensive.price) {
+      more_expensive.name = name;
+      more_expensive.quantity = quantity;
+      more_expensive.price = currentprice;
+      more_expensive.category = category;
+    }
+  }
+}
+console.log("this is the more expensive", more_expensive);
+// 10. Por cada item de la categoríaaN "Electronics", imprime cuanto dinero se obtendría si se vendiera
+// toda la cantidad de ese item.
+// Por ejemplo: si se vendiera toda la cantidad del productor "Keyboard", se obtendría 710.
+inventory.forEach((product) => {
+  if (product.category === "Electronics") {
+    let total = product.price * product.quantity;
+    console.log(total);
+  }
+});
+// 11. Imprime la cantidad total de items que hay en la categoría "Food"
+// // Resultado esperado: 306
+let sumatoria = 0;
+for (let i = 0; i < inventory.length; i++) {
+  if (inventory[i].category === "Food") {
+    sumatoria = inventory[i].quantity + sumatoria;
+  }
+}
+console.log("total number of items in the 'Food' category", sumatoria);
+
+// 12. Encuentra e imprime toda la información del producto con la menor cantidad disponible.
+const least_amount = {
+  name: "",
+  quantity: 0,
+  price: 0,
+  category: "",
+};
+
+for (let i = 0; i < inventory.length; i++) {
+  const { name, price, category, quantity } = inventory[i];
+
+  const currentamount = price;
+  if (i === 0) {
+    least_amount.name = name;
+    least_amount.quantity = quantity;
+    least_amount.price = currentamount;
+    least_amount.category = category;
+  } else {
+    if (currentamount < least_amount.quantity) {
+      least_amount.name = name;
+      least_amount.quantity = quantity;
+      least_amount.price = currentamount;
+      least_amount.category = category;
+    }
+  }
+}
+console.log("this is the least amount", least_amount);
+///////////////
 
 console.log("This is person", person);
 console.log("This is student", student);
