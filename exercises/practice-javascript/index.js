@@ -1020,6 +1020,7 @@ console.log(nwePerson);
 // Usando el siguiente objeto, realiza los siguientes ejercicios:
 // 5. Agrega al objeto una función calculateProfit, la cual se encargará de calcular y retornar cuanto dinero se obtendría
 // si se vendieran todas las unidades del product.
+
 const product = {
   name: "Apples",
   quantity: 10,
@@ -1156,7 +1157,6 @@ const more_expensive = {
 
 for (let i = 0; i < inventory.length; i++) {
   const { name, price, category, quantity } = inventory[i];
-
   const currentprice = price;
   if (i === 0) {
     more_expensive.name = name;
@@ -1219,13 +1219,143 @@ for (let i = 0; i < inventory.length; i++) {
   }
 }
 console.log("this is the least amount", least_amount);
-///////////////
+
+let a;
+a = "hola";
+let b;
+b = a;
+b = {
+  name: "Luis",
+};
+console.log("Manejo x valor:", {
+  a,
+  b,
+});
+let persona1;
+persona1 = {
+  name: "Jorge",
+};
+let persona2;
+persona2 = persona1;
+let persona3 = {
+  ...persona1,
+};
+persona3.edad = 20;
+persona2.name = "Luis";
+console.log("Por referencia:");
+console.log("persona1", persona1);
+console.log("persona2", persona2);
+console.log("persona3", persona3);
+const saludar = (personaXRef) => {
+  /* personaXRef.name = "Otra cosa" */
+  const copiaPersona = {
+    ...personaXRef,
+  };
+  copiaPersona.name = "Otra cosa";
+  console.log(`Hola ${copiaPersona.name}`);
+};
+saludar(persona3);
+console.log(persona3);
+const text = "Hello, it is I";
+/* expected = "I si ti ,olleH" */
+// 1- iterar la cadena del final hacia al comienzo
+// 2- el ultimo de la variable str sera mi primer index en mi nuevo string.
+const invertString = (str) => {
+  let newData = "";
+  /* let dataCounter = 0; */
+  for (let i = str.length - 1; i >= 0; i--) {
+    newData += str[i];
+    /* dataCounter++; */
+  }
+  return newData;
+};
+/* invertString(text); */
+console.log(invertString(text));
+
+const powerOf = (num, power) => {
+  let math = num;
+  for (let i = 1; i < power; i++) {
+    math = math * num;
+  }
+  return math;
+};
+/* const numbers = []; */
+const pitagorsTeorem = (catA, catB) => {
+  let sumresult = powerOf(catA, 2) + powerOf(catB, 2);
+  return Math.sqrt(sumresult);
+};
+console.log("This is the value of the hypotenuse =", pitagorsTeorem(5, 6));
+
+console.log(powerOf(2, 4));
+const personA = { name: "Jorge" };
+const personB = { lastName: "Corea" };
+let personC = { age: 28 };
+personC = {
+  ...personA,
+  ...personB,
+  ...personC,
+};
+/* const arr1 = ['?', '?'];
+const arr2 = ['?', '?'];
+const arr3 = ['?', '?'];
+const arr4 = arr1.concat(arr2,arr3);
+console.log(arr4); // ["?", "?", "?", "?", "?", "?"] */
+const matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+];
+const flatline = () => {
+  let flattened = [];
+  for (i = 0; i < matrix.length; i++) {
+    /* flattened = [...flattened, ...matrix[i]] */
+    flattened = flattened.concat(matrix[i]);
+  }
+  return flattened;
+};
+//i = 1;
+// j = 0;
+//newFlattened = [1, 2, 3];
+const flatlineFor = () => {
+  let newFlattened = [];
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      newFlattened.push(matrix[i][j]);
+    }
+  }
+  return newFlattened;
+};
+console.log(flatline());
+/* console.log(flatlineFor()) */
+// Expected [1, 2, 3, 4, 5, 6, 7, 8, 6];
+
+let matriz = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+  [10, 11, 12],
+  [13, 14, 15],
+  [16, 17, 18],
+  [19, 20],
+];
+console.log(matriz);
+
+const flattEarth = () => {
+  let flattened_array = [];
+  for (let i = 0; i < matriz.length; i++) {
+    for (let h = 0; h < matriz[i].length; h++) {
+      flattened_array.push(matriz[i][h]);
+    }
+  }
+  return flattened_array;
+};
+console.log("This is my flattened Array", flattEarth());
 
 console.log("This is person", person);
 console.log("This is student", student);
 console.log("This is car", car);
 console.log("This is Boock", book);
-//
+//////////////
 console.log("Computer antes", computer.isOn);
 computer.switch();
 console.log("Computer despues", computer.isOn);
