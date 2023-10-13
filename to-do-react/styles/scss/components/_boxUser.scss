@@ -1,0 +1,54 @@
+.BoxUser {
+    &-color {
+        background-color: $default-color-light-orange;
+    }
+
+    &-size {
+        width: 400px;
+        height: 68px;
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+
+        &-login {
+            width: 400px;
+            height: 41px;
+            border-radius: 4px;
+        }
+    }
+
+    &-text {
+        color: $default-color-blak;
+        font-family: $font-family-primary;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        margin-top: 12px;
+        text-align: center;
+
+        &-login {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    &-paragraph {
+        display: flex;
+        justify-content: center;
+
+        &-text {
+            width: 229px;
+            height: 24px;
+            color: $default-color-blak;
+            text-align: center;
+            font-family: $font-family-primary;
+            font-size: 10px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+    }
+}

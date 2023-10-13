@@ -1,0 +1,65 @@
+.UserForm {
+    &-principal {
+        width: 100%;
+        height: 931px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &-box {
+        width: 480px;
+        height: auto;
+        border: 1px solid $default-color-green;
+        display: flex;
+        justify-content: center;
+
+        &-img {
+            width: 110px;
+            height: 79px;
+            margin-top: 8px;
+        }
+    }
+
+    &-main {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+    }
+
+    &-text {
+        color: $text-black;
+        font-family: $font-family-primary;
+        font-size: 10px;
+        font-weight: 400;
+        margin-top: 8px;
+    }
+
+    &-checkUser {
+        display: flex;
+        align-items: center;
+        margin-top: 6px;
+        margin-bottom: 12px;
+    }
+
+    &-footerText {
+        &-box {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 25px;
+            gap: 5px;
+        }
+
+        &-text {
+            color: #F89B1C;
+            text-align: center;
+            font-family: Inter;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+    }
+}

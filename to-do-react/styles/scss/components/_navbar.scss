@@ -1,0 +1,37 @@
+.Navbar {
+    align-items: center;
+    background-color: $border-list-color;
+    color: $text-black;
+    display: flex;
+    gap: 6px;
+    height: 60px;
+    justify-content: flex-end;
+    width: 100%;
+
+    &-text {
+        font-size: 12px;
+        font-weight: 400;
+        text-decoration: none;
+    }
+
+    &-button {
+        background-color: $border-list-color;
+        border: none;
+        width: 103px;
+    }
+
+    &-button:hover {
+        border: none;
+        box-shadow: 4px 3px 4px 3px $background-green;
+    }
+}
+
+.NavbarLight {
+    background-color: $border-list-color;
+    color: $text-black;
+}
+
+.NavbarDark {
+    background-color: $background-main-box-dark;
+    color: $text-white;
+}

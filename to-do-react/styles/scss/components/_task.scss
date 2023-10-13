@@ -1,0 +1,65 @@
+.Task {
+    border: 1px solid $background-green;
+    display: flex;
+    height: 76px;
+    justify-content: space-between;
+    list-style: none;
+    width: auto;
+
+    &-check {
+        align-items: center;
+        display: flex;
+    }
+
+    &-radio {
+        font-size: 20px;
+        padding: 24px;
+        width: 45px;
+    }
+
+    &-completed-text {
+        text-decoration-line: line-through;
+    }
+
+    &-input {
+        display: flex;
+        flex-direction: column;
+        height: 50px;
+        justify-content: center;
+        margin: 10px;
+        width: 426px;
+    }
+
+    &-value {
+        display: flex;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+        margin-left: 24px;
+        text-align: center;
+        width: 427px;
+    }
+
+    &-completed {
+        text-decoration: line-through;
+    }
+}
+
+.TaskLight:nth-child(even) {
+    background-color: $default-color-white;
+}
+
+.TaskDark:nth-child(odd) {
+    background-color: $list-baground-first;
+    color: $text-white;
+}
+
+.TaskLight:nth-child(odd) {
+    background-color: $default-second-list;
+}
+
+.TaskDark:nth-child(even) {
+    background-color: $list-baground-second;
+    color: $text-white;
+}

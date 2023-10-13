@@ -1,0 +1,29 @@
+.BoxTodo {
+    align-items: center;
+    display: flex;
+    height: 871px;
+    justify-content: center;
+    width: 100%;
+
+    &-main {
+        border: $border-main;
+        border-radius: 16px;
+        min-width: 716px;
+    }
+}
+
+.BoxTodoLight {
+    background-color: $default-color-white;
+}
+
+.BoxTodoDark {
+    background-color: $background-main-dark;
+}
+
+.BoxTodoMainLight {
+    background-color: $default-color-white;
+}
+
+.BoxTodoMainDark {
+    background-color: $background-main-box-dark;
+}

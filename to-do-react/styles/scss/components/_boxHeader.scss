@@ -1,0 +1,28 @@
+.BoxHeader {
+    align-items: center;
+    background-color: $background-green;
+    border-radius: 8px;
+    display: flex;
+    height: 87px;
+    justify-content: space-between;
+    margin: 30px;
+
+    &-title {
+        color: $text-white;
+        font-size: 32px;
+        font-weight: 700;
+        margin-left: 22px;
+    }
+
+    &-switch {
+        margin: 26px;
+    }
+}
+
+.BoxHeaderLight {
+    background-color: $background-green;
+}
+
+.BoxHeaderDark {
+    background-color: $dark-header-box;
+}

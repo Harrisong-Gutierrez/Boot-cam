@@ -1,0 +1,17 @@
+.Form {
+    display: flex;
+    margin: 29px;
+
+    &-img {
+        display: flex;
+        justify-content: center;
+    }
+
+    &-paragraph {
+        color: #15232B;
+        font-family: $font-family-primary;
+        font-size: 10px;
+        font-weight: 400;
+        margin-top: 0.25em;
+    }
+}
