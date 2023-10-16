@@ -54,6 +54,7 @@ const HomeTodo = () => {
     const updatedTasks = tasks.map((task) =>
       task.id === taskId ? { ...task, isCompleted: editedCheck } : task,
     );
+    console.log(updatedTasks);
     setTasks(updatedTasks);
     localStorage.setItem('tasks', JSON.stringify(updatedTasks));
   };
