@@ -1403,6 +1403,47 @@ document.write("<br/>Top element is :" + peek());
 document.write("<br/>Elements present in stack : ");
 print();
 
+class Stack {
+  constructor() {
+    this.items = [];
+    this.count = 0;
+  }
+
+  push(element) {
+    this.items[this.count] = element;
+    console.log(`${element} added to ${this.count}`);
+    this.count++;
+    return this.count - 1;
+  }
+}
+const stack = new Stack();
+
+// push() para insertar un elemento en la pila
+// pop() para eliminar un elemento de la pila
+// top() Devuelve el elemento superior de la pila.
+// isEmpty() devuelve verdadero si la pila está vacía; de lo contrario, es falso.
+// size() devuelve el tamaño de la pila.
+
+console.log(stack);
+stack.push(100);
+console.log(stack);
+stack.push(200);
+stack.push("Harrisong");
+console.log(stack);
+stack.push(300);
+stack.push((add = () => {}));
+console.log(typeof stack);
+console.log(stack);
+
+function solution(array) {
+  const newArray = [];
+  for (let index = 0; index < array.length; index++) {
+    newArray.push(array[index] * 2);
+  }
+  return newArray;
+}
+console.log(solution([1, 2, 3, 4]));
+
 console.log("This is person", person);
 console.log("This is student", student);
 console.log("This is car", car);
