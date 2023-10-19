@@ -1444,6 +1444,159 @@ function solution(array) {
 }
 console.log(solution([1, 2, 3, 4]));
 
+const UsersList = [
+  {
+    firstName: "Jose",
+    id: 1,
+    lastName: "Ramires",
+    accountNumber: 171338,
+    balance: 14500,
+    currency: "dollars",
+    pin: 56,
+  },
+  {
+    firstName: "Anthony",
+    id: 2,
+    lastName: "Lopez",
+    accountNumber: 971998,
+    balance: 15000,
+    currency: "dollars",
+    pin: 133,
+  },
+  {
+    firstName: "Mario",
+    id: 3,
+    lastName: "Bross",
+    accountNumber: 1998,
+    balance: 200,
+    currency: "cordobas",
+    pin: 279,
+  },
+  {
+    firstName: "Luigi",
+    id: 4,
+    lastName: "Cuppa",
+    accountNumber: 19984,
+    balance: 150000,
+    currency: "cordobas",
+    pin: 294,
+  },
+];
+
+const atm = {
+  id: 6,
+  bankName: "BOA",
+  users: UsersList,
+  findUserByAccount: function (accountNumber) {
+    let userFound = null;
+    let errorMessage = "You do not have an account";
+
+    this.users.forEach((user) => {
+      if (user.accountNumber === accountNumber) {
+        userFound = user;
+        errorMessage = "";
+      }
+    });
+
+    return { data: userFound, error: errorMessage };
+  },
+  checkBalance: function (accountNumber) {
+    const resultadoBusqueda = this.findUserByAccount(accountNumber);
+
+    if (resultadoBusqueda.error) {
+      return resultadoBusqueda.error;
+    }
+
+    if (resultadoBusqueda.data) {
+      return resultadoBusqueda.data.balance;
+    }
+  },
+
+  deposit: function (accountNumber, addedAmount, currency) {
+    if (addedAmount <= 0) {
+      return "Could not make your deposit, invalid amount.";
+    }
+
+    if (currency != "dollars" && currency != "cordobas") {
+      return "Could not make your deposit, invalid currency.";
+    }
+
+    const { data, error } = this.findUserByAccount(accountNumber);
+    if (error) return error; // No user found
+
+    let convertedAmount = 0;
+    if (data.currency === "cordobas" && currency === "dollars") {
+      convertedAmount = addedAmount * 36;
+    } else if (data.currency === "dollars" && currency === "cordobas") {
+      convertedAmount = addedAmount / 36;
+    } else {
+      convertedAmount = addedAmount;
+    }
+    data.balance += convertedAmount;
+    console.log(
+      `you have added ${convertedAmount} ${currency} into your account`
+    );
+
+    console.log("Inside function:", data);
+  },
+
+  changeBalance: function (isDeposit, accountNumber, Amount, currency) {
+    if (Amount <= 0) {
+      return "Could not make your deposit, invalid amount.";
+    }
+
+    if (currency != "dollars" && currency != "cordobas") {
+      return "Could not make your deposit, invalid currency.";
+    }
+
+    const { data, error } = this.findUserByAccount(accountNumber);
+    if (error) return error;
+
+    let modifiedUser = { ...data };
+
+    let convertedAmount = 0;
+    if (modifiedUser.currency === "cordobas" && currency === "dollars") {
+      convertedAmount = Amount * 36;
+    } else if (modifiedUser.currency === "dollars" && currency === "cordobas") {
+      convertedAmount = Amount / 36;
+    } else {
+      convertedAmount = Amount;
+    }
+
+    if (!isDeposit && convertedAmount > modifiedUser.balance) {
+      return "Cannot withdrawal";
+    }
+
+    if (isDeposit) {
+      modifiedUser.balance += convertedAmount;
+      console.log(
+        `you have added ${convertedAmount} ${currency} into your account`
+      );
+    } else {
+      modifiedUser.balance -= convertedAmount;
+    }
+
+    const newModifedUsers = this.users.map((currentUser) => {
+      if (currentUser.accountNumber === accountNumber) {
+        return {
+          ...modifiedUser,
+        };
+      } else {
+        return currentUser; // Place the same user in the new array
+      }
+    });
+
+    this.users = newModifedUsers;
+  },
+};
+
+console.log(atm.checkBalance(19984));
+atm.changeBalance(true, 1998, 1, "dollars");
+console.log(
+  "The transition has been successful The  New balance is",
+  atm.checkBalance(19984)
+);
+
 console.log("This is person", person);
 console.log("This is student", student);
 console.log("This is car", car);
@@ -1456,6 +1609,7 @@ console.log("This is my Computer", computer);
 console.log("Computer System antes", computer.operativeSistem);
 computer.changeComputerSystem("WINDadditionOWS");
 console.log("Computer System despues", computer.operativeSistem);
+
 console.log("antes", airCon.isOn);
 airCon.switch();
 console.log("despues", airCon.isOn);

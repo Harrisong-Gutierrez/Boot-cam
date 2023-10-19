@@ -5,11 +5,16 @@ import { FaStar } from 'react-icons/fa';
 
 const Card = ({ src, alt, name, species, created, onFavoriteClick }) => {
   const dispatch = useDispatch();
-  const favoriteIconColor = useSelector((state) => state.favoriteIconColor[name] || 'gray');
+  const favoriteIconColor = useSelector(
+    (state) => state.favoriteIconColor[name] || 'gray',
+  );
 
   const handleFavoriteClick = () => {
     const newColor = favoriteIconColor === 'gray' ? 'yellow' : 'gray';
-    dispatch({ type: 'SET_FAVORITE_ICON_COLOR', payload: { cardName: name, color: newColor } });
+    dispatch({
+      type: 'SET_FAVORITE_ICON_COLOR',
+      payload: { cardName: name, color: newColor },
+    });
     onFavoriteClick(newColor === 'yellow');
   };
   return (
@@ -32,7 +37,7 @@ const Card = ({ src, alt, name, species, created, onFavoriteClick }) => {
               handleFavoriteClick();
             }}
           >
-            <FaStar  color={favoriteIconColor} />
+            <FaStar color={favoriteIconColor} />
           </span>
         </div>
         <h3 className="Card-title">{name}</h3>
