@@ -1633,3 +1633,53 @@ let Harrisong = new Array();
 Harrisong[0] = "Harrisong";
 Harrisong[1] = "Gutierrez";
 console.log("This is Harrisong", Harrisong);
+
+class LinkedList {
+  constructor() {
+    this.head = null;
+    this.tail = null;
+  }
+  append(value) {
+    const newNode = { value: value };
+    if (this.tail) {
+      this.tail.next = newNode;
+    }
+    this.tail = newNode;
+    if (!this.head) {
+      this.head = newNode;
+    }
+  }
+  toArray() {
+    const elements = [];
+
+    let curNode = this.head;
+    while (curNode) {
+      elements.push(curNode);
+      curNode = curNode.next;
+    }
+    return elements;
+  }
+}
+
+const linkedList1 = new LinkedList();
+linkedList1.append(1);
+linkedList1.append("Hallo Harry");
+linkedList1.append("Harrisong");
+linkedList1.append(true);
+linkedList1.append(25.1998);
+console.log(linkedList1);
+
+function findLongestWordLength(str) {
+  let separate_text = str.split(" ");
+  const soertedText = separate_text.sort((a, b) => {
+    let givenArray = b.length - a.length;
+    return givenArray;
+  });
+
+  let teheBigest = soertedText[0];
+  return teheBigest.length;
+}
+
+console.log(
+  findLongestWordLength("The quick brown fox jumped over the lazy dog")
+);
