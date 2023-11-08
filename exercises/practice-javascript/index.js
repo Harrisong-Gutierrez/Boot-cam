@@ -1675,7 +1675,6 @@ function findLongestWordLength(str) {
     let givenArray = b.length - a.length;
     return givenArray;
   });
-
   let teheBigest = soertedText[0];
   return teheBigest.length;
 }
@@ -1683,3 +1682,120 @@ function findLongestWordLength(str) {
 console.log(
   findLongestWordLength("The quick brown fox jumped over the lazy dog")
 );
+
+// Completa la funcion que recibe un número negativo o positivo y retorna un numero con el signo opuesto.
+const cambioSigno = (num) => {
+  if (num < 0) {
+    return num - num * 2;
+  }
+  return num - num * 2;
+};
+
+// console.log(cambioSigno(8.3))
+
+// Completa la funcion para que elimine los elementos repetidos de un array y retorne el array sin elementos repetidos.
+
+const array = [1, 3, 4, 1, 2, 3, 4, 5];
+const array2 = [
+  "tengo",
+  90,
+  "años",
+  90,
+  "viviendo",
+  "tengo",
+  "en",
+  "en",
+  "mi",
+  "país",
+  "país",
+];
+const array3 = ["hola", "mundo", "mundo", "del", "desarrollo", "del"];
+
+const eliminaRepetidos = (arr) => {
+  let newDate = [];
+  arr.sort();
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i - 1] === arr[i]) {
+      console.log(false);
+    } else {
+      newDate.push(arr[i]);
+    }
+  }
+  return newDate;
+};
+
+// console.log(eliminaRepetidos(array));
+// console.log(eliminaRepetidos(array2));
+// console.log(eliminaRepetidos(array3));
+
+// - Encuentra el factorial de un numero (n!) entero mayor o igual a cero y retorna el resultado.
+// - Si introduce un elemento negativo retorna el mensaje: "La funcion no acepta negativos"
+
+const factorial = (num) => {
+  //  Tu respuesta va aqui
+  let factorialCounter = 1;
+  for (let i = 2; i < num + 1; i++) {
+    factorialCounter = factorialCounter * i;
+  }
+
+  return `the factorial of ${num} is = ${factorialCounter}`;
+};
+
+// console.log(factorial(6))
+
+/* Retorna en un arreglo la palabra mas larga y la cantidad de caracteres de la siguiente oración. 
+Ejemplo: ["Javascript", 10]*/
+
+const string = "Me gustan los retos por eso resuelvo ejercicios en Javascript";
+
+// No cambies el nombre de la funcion ni los parametros
+const palabraMasLarga = (str) => {
+  let newArr = [];
+  let separatedW = str.split(" ");
+  const sorted = separatedW.sort((a, b) => a.length - b.length);
+  let my_data = sorted[sorted.length - 1];
+  newArr.push(my_data);
+  newArr.push(my_data.length);
+  return newArr;
+};
+
+// console.log(palabraMasLarga(string))
+
+/**
+ * Completa la funcion para que retorne true si el string ingresado es un palindromo o false si no es palindromo.
+ *Ej.
+ *str="anita lava la tina" ---> true
+ *str="AnitA LaVa la TIna" ---> true
+ *str="JavaScript" ---> false
+ *str="-%1-0*0_1#" --->true
+ */
+
+let text2 = "AnitA LaVa la TIna";
+let text3 =
+  "A mama Roma le aviva el amor a papa y a papa Roma le aviva el amor a mama";
+const palindromo = (str) => {
+  let newText = [];
+  let newNormalTent = [];
+  for (let i = str.length; i >= 0; i--) {
+    if (str[i] !== " ") {
+      newText.push(str[i]);
+    }
+  }
+  for (let h = 0; h < str.length; h++) {
+    if (str[h] !== " ") {
+      newNormalTent.push(str[h]);
+    }
+  }
+  let newOne = newText.join("");
+  let newNormalOne = newNormalTent.join("");
+  let newAnotherNormalOne = newNormalOne.toLowerCase();
+  let newAnotherOne = newOne.toLowerCase();
+  let confirmation;
+  if (newAnotherOne === newAnotherNormalOne) {
+    confirmation = true;
+  } else {
+    confirmation = false;
+  }
+  return confirmation;
+};
+// console.log(palindromo(text3));
